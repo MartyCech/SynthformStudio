@@ -1,0 +1,31 @@
+{
+  "name": "synthform-studio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Synthform Studio — static WebGL-driven studio site.",
+  "scripts": {
+    "build": "tailwindcss -i ./css/input.css -o ./css/styles.css --minify && node scripts/build-public.js && node scripts/check-csp.js",
+    "watch": "tailwindcss -i ./css/input.css -o ./css/styles.css --watch",
+    "serve": "npm run build && node dev-server.js",
+    "preview": "vercel",
+    "deploy": "vercel --prod"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MartyCech/SynthformStudio.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MartyCech/SynthformStudio/issues"
+  },
+  "homepage": "https://github.com/MartyCech/SynthformStudio#readme",
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "jsdom": "^29.1.1",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.14"
+  }
+}
