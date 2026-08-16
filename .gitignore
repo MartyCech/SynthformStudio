@@ -27,17 +27,32 @@ pnpm-debug.log*
 *.swo
 *~
 
-# Local editor configuration — the shared agent/MCP config stays versioned
+# Local editor configuration — tasks.json je sdílený, zbytek je osobní
 .vscode/*
-!.vscode/mcp.json
 !.vscode/tasks.json
 .idea/
 .fleet/
 .windsurf/
 
+# Lokální konfigurace AI agentů a MCP serverů — může obsahovat tokeny
+.vscode/mcp.json
+.mcp.json
+.cursor/
+.claude/
+.aider*
+
 # Environment / config — never commit
 .env*
 !.env*.example
+
+# Credentials, klíče a certifikáty
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+credentials.json
+secrets.json
 
 # Vercel CLI
 .vercel
