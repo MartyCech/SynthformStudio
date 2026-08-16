@@ -65,12 +65,13 @@ function initScrollMotion(gsap) {
 
 function initPointerMotion(gsap) {
   const cursor = document.querySelector('[data-cursor]');
+  gsap.set(cursor, { xPercent: -50, yPercent: -50 });
   const setCursorX = gsap.quickSetter(cursor, 'x', 'px');
   const setCursorY = gsap.quickSetter(cursor, 'y', 'px');
 
   window.addEventListener('pointermove', (event) => {
-    setCursorX(event.clientX - 20);
-    setCursorY(event.clientY - 20);
+    setCursorX(event.clientX);
+    setCursorY(event.clientY);
     cursor.style.opacity = '1';
   }, { passive: true });
 
