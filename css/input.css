@@ -758,6 +758,18 @@
       @apply h-24 text-[0.65rem];
     }
 
+    .marquee {
+      @apply py-3;
+    }
+
+    .marquee__track {
+      @apply gap-4 text-base leading-none;
+    }
+
+    .marquee__track i {
+      @apply text-[0.6rem] leading-none;
+    }
+
     .project:nth-of-type(odd) {
       @apply mt-0;
     }

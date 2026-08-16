@@ -147,9 +147,8 @@ export function initParticleField(container, { reducedMotion = false } = {}) {
   }
 
   function updateCloud(cloud, delta, intensity) {
-    const cursorX = pointer.x * camera.aspect * 8.6;
-    const cursorY = pointer.y * 5.1;
-    const interactionRadius = cloud === asteroids ? 3.2 : 2.6;
+    const halfFovTangent = Math.tan(THREE.MathUtils.degToRad(camera.fov * 0.5));
+    const interactionRadius = cloud === asteroids ? 4.4 : 3.7;
 
     for (let index = 0; index < cloud.count; index += 1) {
       const offset = index * 3;
@@ -163,16 +162,25 @@ export function initParticleField(container, { reducedMotion = false } = {}) {
         cloud.origins[offset + 1] = cloud.positions[offset + 1] = (Math.random() - 0.5) * 18;
       }
 
-      const perspective = THREE.MathUtils.clamp((z + 32) / 40, 0.2, 1);
-      const deltaX = x - cursorX * perspective;
-      const deltaY = y - cursorY * perspective;
+      const cameraDistance = Math.max(camera.position.z - z, 0.1);
+      const cursorX = camera.position.x + pointer.x * cameraDistance * halfFovTangent * camera.aspect;
+      const cursorY = camera.position.y + pointer.y * cameraDistance * halfFovTangent;
+      const deltaX = x - cursorX;
+      const deltaY = y - cursorY;
       const distanceSquared = deltaX * deltaX + deltaY * deltaY;
 
       if (distanceSquared < interactionRadius * interactionRadius) {
         const distance = Math.max(Math.sqrt(distanceSquared), 0.05);
-        const force = (1 - distance / interactionRadius) * 0.23 * intensity;
-        x += (deltaX / distance) * force * delta;
-        y += (deltaY / distance) * force * delta;
+        const normalX = deltaX / distance;
+        const normalY = deltaY / distance;
+        const falloff = 1 - distance / interactionRadius;
+        const orbitRadius = interactionRadius * 0.48;
+        const swirlForce = falloff * 0.075 * intensity;
+        const orbitForce = (orbitRadius - distance) * 0.016 * intensity;
+        const centerPressure = Math.max(0, 1 - distance / (orbitRadius * 0.55)) * 0.07 * intensity;
+
+        x += (-normalY * swirlForce + normalX * (centerPressure + orbitForce)) * delta;
+        y += (normalX * swirlForce + normalY * (centerPressure + orbitForce)) * delta;
       }
 
       x += (cloud.origins[offset] - x) * 0.014 * delta;
