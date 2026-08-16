@@ -4,7 +4,7 @@
   "private": true,
   "description": "Synthform Studio — static WebGL-driven studio site.",
   "scripts": {
-    "build": "tailwindcss -i ./css/input.css -o ./css/styles.css --minify && node scripts/build-public.js && node scripts/check-csp.js",
+    "build": "node scripts/vendor-assets.js && tailwindcss -i ./css/input.css -o ./css/styles.css --minify && node scripts/build-public.js && node scripts/check-csp.js",
     "watch": "tailwindcss -i ./css/input.css -o ./css/styles.css --watch",
     "serve": "npm run build && node dev-server.js",
     "preview": "vercel",
@@ -27,5 +27,9 @@
     "jsdom": "^29.1.1",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.14"
+  },
+  "dependencies": {
+    "gsap": "3.15.0",
+    "three": "0.185.1"
   }
 }

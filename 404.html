@@ -1,17 +1,21 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="cs" class="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#d8ff36">
   <title>404 — Synthform Studio</title>
   <meta name="robots" content="noindex">
+  <link rel="icon" href="/img/synthform_logo.svg" type="image/svg+xml">
+  <link rel="preload" href="/fonts/manrope-latin-v20.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/manrope-latin-ext-v20.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/css/styles.css">
 </head>
-<body>
-  <main class="flex min-h-screen flex-col items-center justify-center gap-4 px-6 text-center">
-    <p class="font-display text-6xl font-bold text-accent">404</p>
-    <h1 class="text-2xl font-bold">This page doesn't exist.</h1>
-    <a href="/" class="text-accent underline underline-offset-4">Back to the homepage</a>
+<body class="error-page">
+  <main>
+    <p>404 / Tady nic není</p>
+    <h1>Ztratili jste se<br>ve <em>vesmíru.</em></h1>
+    <a class="round-link" href="/"><span>Zpět na úvod</span><span aria-hidden="true">↗</span></a>
   </main>
 </body>
 </html>

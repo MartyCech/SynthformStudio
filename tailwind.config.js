@@ -8,18 +8,21 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        accent: "#00ff6a",
-        secondary: "#4345d5",
+        ink: "#090909",
+        paper: "#f3f0e8",
+        acid: "#d8ff36",
+        coral: "#ff5d3d",
+        cyan: "#53e5ff",
         dark: {
-          900: "#0a0a0a",
+          900: "#090909",
           800: "#111111",
-          700: "#1a1a1a",
-          600: "#222222",
+          700: "#1b1b1b",
+          600: "#262626",
         },
       },
       fontFamily: {
-        display: ['"Space Grotesk"', 'sans-serif'],
-        body: ['Inter', 'sans-serif'],
+        display: ['"Manrope"', 'sans-serif'],
+        body: ['"Manrope"', 'sans-serif'],
       },
       transitionTimingFunction: {
         smooth: 'cubic-bezier(0.25, 1, 0.5, 1)',

@@ -1,22 +1,231 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="cs" class="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Synthform Studio</title>
-  <meta name="description" content="Synthform Studio — static WebGL-driven studio site.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap">
+  <meta name="theme-color" content="#090909">
+  <title>Synthform Studio — weby na míru bez šablon</title>
+  <meta name="description" content="Navrhujeme a spouštíme originální weby na míru. Od první myšlenky po provoz, rychle a bez šablon.">
+  <meta property="og:title" content="Synthform Studio — weby na míru bez šablon">
+  <meta property="og:description" content="Design, vývoj, spuštění a péče o web pod jednou střechou.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="/img/synthform_logo.svg" type="image/svg+xml">
+  <link rel="preload" href="/fonts/manrope-latin-v20.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/manrope-latin-ext-v20.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/css/styles.css">
+  <script type="module" src="/js/main.js"></script>
 </head>
 <body>
-  <main class="flex min-h-screen flex-col items-center justify-center gap-4 px-6 text-center">
-    <h1 class="text-4xl font-bold tracking-tight md:text-6xl">Synthform&nbsp;Studio</h1>
-    <p class="max-w-md text-white/60">
-      Placeholder page. The build pipeline, CSP and agent setup are in place — start here.
-    </p>
-    <p class="text-sm text-accent">npm run serve</p>
+  <a class="skip-link" href="#obsah">Přejít na obsah</a>
+  <div class="preloader" data-preloader aria-hidden="true">
+    <div class="preloader__mark"><span>S</span><span>F</span></div>
+    <div class="preloader__track"><span></span></div>
+  </div>
+  <div class="cursor-orbit" data-cursor aria-hidden="true"><span></span></div>
+
+  <header class="site-header" data-header>
+    <a class="brand" href="#top" aria-label="Synthform Studio, úvod">
+      <img src="/img/synthform_logo.svg" width="160" height="70" alt="Synthform Studio">
+    </a>
+    <nav class="site-nav" aria-label="Hlavní navigace">
+      <a href="#projekty">Projekty</a>
+      <a href="#studio">Studio</a>
+      <a class="nav-cta" href="#objednavka">Objednat web <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main id="obsah">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero__fallback" aria-hidden="true"></div>
+      <div class="hero__canvas" data-particle-field aria-hidden="true"></div>
+      <div class="hero__content">
+        <p class="eyebrow hero__eyebrow" data-intro>Nezávislé digitální studio · Praha · Tábor</p>
+        <h1 id="hero-title" class="hero__title" data-intro>
+          <span>Weby na míru.</span>
+          <span>Rychle. <em>Bez šablon.</em></span>
+        </h1>
+        <div class="hero__bottom" data-intro>
+          <p>Od prvního nápadu po ostrý provoz. Design, vývoj a péče v jednom rychlém týmu.</p>
+          <a class="round-link magnetic" href="#objednavka">
+            <span>Chci vlastní web</span><span class="round-link__arrow" aria-hidden="true">↘</span>
+          </a>
+        </div>
+      </div>
+      <p class="hero__hint" aria-hidden="true">Pohybujte kurzorem</p>
+    </section>
+
+    <div class="marquee" aria-label="Naše služby">
+      <div class="marquee__track">
+        <span>Strategie</span><i>✦</i><span>Webdesign</span><i>✦</i><span>Vývoj</span><i>✦</i><span>WebGL</span><i>✦</i><span>Provoz</span><i>✦</i>
+        <span aria-hidden="true">Strategie</span><i aria-hidden="true">✦</i><span aria-hidden="true">Webdesign</span><i aria-hidden="true">✦</i><span aria-hidden="true">Vývoj</span><i aria-hidden="true">✦</i><span aria-hidden="true">WebGL</span><i aria-hidden="true">✦</i><span aria-hidden="true">Provoz</span><i aria-hidden="true">✦</i>
+      </div>
+    </div>
+
+    <section class="statement section-pad" aria-labelledby="statement-title">
+      <p class="section-index">01 / Přístup</p>
+      <div>
+        <h2 id="statement-title" class="statement__title reveal-text">Váš web nemá být další položka v seznamu. Má být důvod, proč si vás lidé zapamatují.</h2>
+        <p class="statement__copy reveal">Propojujeme výrazný vizuální názor s rychlým, čistým kódem. Žádné překupování šablon. Každý detail vzniká pro konkrétní značku, publikum a cíl.</p>
+      </div>
+    </section>
+
+    <section class="projects section-pad" id="projekty" aria-labelledby="projects-title">
+      <div class="section-heading reveal">
+        <p class="section-index">02 / Vybrané projekty</p>
+        <h2 id="projects-title">Práce, která<br>mění <em>perspektivu.</em></h2>
+      </div>
+
+      <article class="project project--acid reveal" data-project>
+        <div class="project__meta"><span>Identita · E-commerce</span><span>2026</span></div>
+        <div class="project__visual" aria-label="Ukázkový vizuál projektu Nula Objects">
+          <span class="project__number">01</span><p>NULA<br>OBJECTS</p><div class="project__shape project__shape--ring"></div>
+        </div>
+        <div class="project__footer"><h3>Nula Objects</h3><p>Digitální galerie pro český produktový design.</p></div>
+      </article>
+
+      <article class="project project--coral reveal" data-project>
+        <div class="project__meta"><span>Brand · WebGL</span><span>2026</span></div>
+        <div class="project__visual" aria-label="Ukázkový vizuál projektu Orbit Lab">
+          <span class="project__number">02</span><p>ORBIT<br>LAB</p><div class="project__shape project__shape--sphere"></div>
+        </div>
+        <div class="project__footer"><h3>Orbit Lab</h3><p>Interaktivní launch pro výzkumné studio.</p></div>
+      </article>
+
+      <article class="project project--cyan reveal" data-project>
+        <div class="project__meta"><span>Web · Art direction</span><span>2025</span></div>
+        <div class="project__visual" aria-label="Ukázkový vizuál projektu Kalma Retreat">
+          <span class="project__number">03</span><p>KALMA<br>RETREAT</p><div class="project__shape project__shape--lines"></div>
+        </div>
+        <div class="project__footer"><h3>Kalma Retreat</h3><p>Klidná digitální zkušenost pro místo mimo čas.</p></div>
+      </article>
+
+      <article class="project project--paper reveal" data-project>
+        <div class="project__meta"><span>Kultura · Editorial</span><span>2025</span></div>
+        <div class="project__visual" aria-label="Ukázkový vizuál projektu Kontext 44">
+          <span class="project__number">04</span><p>KONTEXT<br>44</p><div class="project__shape project__shape--type">K44</div>
+        </div>
+        <div class="project__footer"><h3>Kontext 44</h3><p>Online prostor pro současnou architekturu.</p></div>
+      </article>
+      <p class="projects__note">Ukázkové koncepty vytvořené pro prezentaci směru studia.</p>
+    </section>
+
+    <section class="services section-pad" aria-labelledby="services-title">
+      <div class="section-heading section-heading--compact reveal">
+        <p class="section-index">03 / Co dodáme</p>
+        <h2 id="services-title">Jeden tým.<br><em>Celý web.</em></h2>
+      </div>
+      <div class="service-list">
+        <article class="service-row reveal"><span>01</span><h3>Směr a strategie</h3><p>Ujasníme nabídku, publikum a jedinou věc, kterou má web opravdu udělat.</p></article>
+        <article class="service-row reveal"><span>02</span><h3>Design bez šablon</h3><p>Navrhneme typografii, pohyb i rozhraní, které patří pouze vaší značce.</p></article>
+        <article class="service-row reveal"><span>03</span><h3>Rychlý vývoj</h3><p>Stavíme lehké, přístupné a responzivní weby s čistým kódem.</p></article>
+        <article class="service-row reveal"><span>04</span><h3>Spuštění a péče</h3><p>Zařídíme doménu, analytiku, nasazení i dlouhodobou údržbu.</p></article>
+      </div>
+    </section>
+
+    <section class="process section-pad" aria-labelledby="process-title">
+      <p class="section-index">04 / Jak to probíhá</p>
+      <div class="process__content">
+        <h2 id="process-title" class="reveal-text">Od první zprávy k hotovému webu za <em>4–8 týdnů.</em></h2>
+        <ol class="process__steps">
+          <li class="reveal"><span>01</span><strong>Pochopíme</strong><p>Krátký workshop, cíle a obsah.</p></li>
+          <li class="reveal"><span>02</span><strong>Navrhneme</strong><p>Směr, prototyp a finální design.</p></li>
+          <li class="reveal"><span>03</span><strong>Postavíme</strong><p>Responzivní vývoj a animace.</p></li>
+          <li class="reveal"><span>04</span><strong>Spustíme</strong><p>Testování, doména a další péče.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="studio section-pad" id="studio" aria-labelledby="studio-title">
+      <div class="studio__heading reveal">
+        <p class="section-index">05 / Studio</p>
+        <h2 id="studio-title">Spojení kódu<br>a originálního <em>designu.</em></h2>
+      </div>
+      <div class="studio__manifesto reveal">
+        <p>Vytváříme weby s unikátním designem, přesně na míru každému klientovi a jeho příběhu. Šablony necháváme jiným.</p>
+        <p>Naše práce stojí na propojení více než 20 let zkušeností s technologií a designem. Kód a estetika netvoří dva světy, ale jeden spolehlivý celek.</p>
+      </div>
+      <div class="people">
+        <article class="person reveal">
+          <a class="person__portrait" href="https://martincech.dev/" target="_blank" rel="noreferrer" aria-label="Portfolio Martina Čecha, otevře se v novém okně">
+            <img src="/img/martin.jpg" width="1200" height="1000" alt="Portrét Martina Čecha" loading="lazy"><span aria-hidden="true">↗</span>
+          </a>
+          <div class="person__meta">
+            <div class="person__name"><h3>Martin Čech</h3><span>01</span></div>
+            <p class="person__role">UX design, systémy a frontend</p>
+          </div>
+          <p class="person__bio">Vede návrh od vyjasnění problému a UX výzkumu přes prototyp až k testovanému frontendu. Zkušenost z rozsáhlých digitálních produktů přetavuje do srozumitelného řešení, designového systému a rychlých AI prototypů.</p>
+          <ul class="person__focus" aria-label="Hlavní přínosy Martina Čecha">
+            <li>Design systems pro růst bez vizuálního dluhu</li>
+            <li>UX pro složité služby a rozhodování uživatelů</li>
+            <li>Prototypy, frontend a kontrola kvality v jednom týmu</li>
+          </ul>
+          <a class="person__link" href="https://martincech.dev/" target="_blank" rel="noreferrer">Portfolio Martina <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="person person--patrik reveal">
+          <a class="person__portrait" href="https://patriksvoboda.cz/" target="_blank" rel="noreferrer" aria-label="Portfolio Patrika Svobody, otevře se v novém okně">
+            <img src="/img/patrik.jpeg" width="768" height="768" alt="Portrét Patrika Svobody" loading="lazy"><span aria-hidden="true">↗</span>
+          </a>
+          <div class="person__meta">
+            <div class="person__name"><h3>Patrik Svoboda</h3><span>02</span></div>
+            <p class="person__role">Art direction a grafický design</p>
+          </div>
+          <p class="person__bio">Do digitální práce přináší oko vycvičené uměním a kulturou. V Final Idea spojuje grafický design s výstavami, nakladatelstvím a uměleckým managementem; jako odpovědná osoba organizuje také Cenu kritiky za mladou malbu.</p>
+          <ul class="person__focus" aria-label="Hlavní přínosy Patrika Svobody">
+            <li>Výrazné identity s přesnou typografií a rytmem</li>
+            <li>Cit pro obsah, artefakt i prostor výstavy</li>
+            <li>Kulturní perspektiva, která neredukuje značku na dekoraci</li>
+          </ul>
+          <a class="person__link" href="https://patriksvoboda.cz/" target="_blank" rel="noreferrer">Portfolio Patrika <span aria-hidden="true">↗</span></a>
+        </article>
+      </div>
+    </section>
+
+    <section class="order section-pad" id="objednavka" aria-labelledby="order-title">
+      <div class="order__heading reveal">
+        <p class="section-index">06 / Nový projekt</p>
+        <h2 id="order-title">Pojďme vytvořit web, který nebude chtít <em>zapadnout.</em></h2>
+        <p>Vyplňte pár bodů. Připravíme zprávu s vaším zadáním a ozveme se s návrhem dalšího kroku.</p>
+      </div>
+      <form class="order-form reveal" data-order-form>
+        <div class="form-field">
+          <label for="name">Vaše jméno / firma</label>
+          <input id="name" name="name" type="text" autocomplete="name" required placeholder="Jak vám máme říkat?">
+        </div>
+        <div class="form-field">
+          <label for="email">E-mail</label>
+          <input id="email" name="email" type="email" autocomplete="email" required placeholder="kam@se.ozveme">
+        </div>
+        <fieldset class="form-options">
+          <legend>Co potřebujete?</legend>
+          <label><input type="radio" name="service" value="Nový web" checked><span>Nový web</span></label>
+          <label><input type="radio" name="service" value="Redesign"><span>Redesign</span></label>
+          <label><input type="radio" name="service" value="Web + péče"><span>Web + péče</span></label>
+        </fieldset>
+        <div class="form-field">
+          <label for="budget">Orientační rozpočet</label>
+          <select id="budget" name="budget">
+            <option value="80–150 tis. Kč">80–150 tis. Kč</option>
+            <option value="150–300 tis. Kč">150–300 tis. Kč</option>
+            <option value="300 tis. Kč a více">300 tis. Kč a více</option>
+            <option value="Potřebuji poradit">Potřebuji poradit</option>
+          </select>
+        </div>
+        <div class="form-field form-field--wide">
+          <label for="message">Pár slov o projektu</label>
+          <textarea id="message" name="message" rows="4" required placeholder="Co stavíme, pro koho a kdy má být hotovo?"></textarea>
+        </div>
+        <button class="submit-button magnetic" type="submit"><span>Připravit poptávku</span><span aria-hidden="true">↗</span></button>
+        <p class="form-note">Odeslání otevře váš e-mail s vyplněnou poptávkou. Žádná data neukládáme.</p>
+      </form>
+    </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="footer__lead"><p>Máte nápad?</p><a href="mailto:hello@synthform.studio">hello@synthform.studio <span aria-hidden="true">↗</span></a></div>
+    <div class="footer__bottom">
+      <img src="/img/synthform_logo.svg" width="220" height="96" alt="Synthform Studio">
+      <p>Praha · Česká republika</p><p>© <span data-year>2026</span> Synthform Studio</p><a href="#top">Nahoru ↑</a>
+    </div>
+  </footer>
 </body>
 </html>
