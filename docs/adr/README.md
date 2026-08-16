@@ -15,3 +15,4 @@ Starý záznam nikdy nepřepisuj — dej mu status `superseded by ADR-NNNN` a za
 | [0004](0004-explicit-public-dist-artifact.md) | Explicitní veřejný `dist/` artefakt pro deploy | accepted | 2026-08-16 |
 | [0005](0005-hash-based-csp.md) | Hashová Content-Security-Policy ověřovaná při buildu | accepted | 2026-08-16 |
 | [0006](0006-agent-skills-vendored-in-repo.md) | Agent skills verzované v repu | accepted | 2026-08-16 |
+| [0007](0007-github-pages-preview-relative-asset-paths.md) | GitHub Pages jako testovací prostředí a relativní cesty k assetům | accepted | 2026-08-16 |
