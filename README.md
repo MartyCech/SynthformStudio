@@ -27,7 +27,7 @@ npm run deploy    # vercel --prod
 ## Struktura
 
 ```
-.agents/skills/    Agent skills verzované v repu (ADR-0006)
+.agents/skills/    Agent skills — lokální, mimo git (ADR-0008)
 .github/           copilot-instructions.md — rozcestník pro AI agenta
 .vscode/           MCP servery a úlohy
 css/input.css      Zdroj Tailwindu (styles.css je build artefakt)

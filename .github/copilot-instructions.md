@@ -25,7 +25,7 @@ je přímo v HTML nebo ve statických JSON/JS souborech v repu.
 |-----|-----------|---------------------|
 | `docs/adr/` | **Zásadní architektonická rozhodnutí + důvody** (Context → Decision → Alternatives → Consequences). Index v `docs/adr/README.md`. | **Vždy než měníš související oblast** — zjisti, proč je to tak, jak to je. |
 | `docs/adr/0000-project-brief.md` | Brief projektu: co web je, pro koho, jaký je vizuální záměr. | Když řešíš obsah, texty, vzhled sekcí. |
-| `.agents/skills/` | Nainstalované agent skills (frontend design, UI animace, accessibility, Tailwind design system, SEO, audit webu, Vercel). Zámek verzí v `skills-lock.json`. | Když potřebuješ hlubší doménovou znalost pro daný typ úkolu. |
+| `.agents/skills/` | Lokálně nainstalované agent skills (frontend design, UI animace, accessibility, Tailwind design system, SEO, audit webu, Vercel). **Neverzuje se v gitu** (ADR-0008). | Když potřebuješ hlubší doménovou znalost pro daný typ úkolu. |
 
 ## Pravidla pro práci s rozhodnutími (ADR)
 

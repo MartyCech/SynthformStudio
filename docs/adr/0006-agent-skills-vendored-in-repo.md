@@ -1,7 +1,7 @@
 # ADR-0006: Agent skills verzované v repu
 
 **Date**: 2026-08-16  
-**Status**: accepted  
+**Status**: superseded by ADR-0008  
 **Deciders**: Martin Čech
 
 ## Context

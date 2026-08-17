@@ -41,6 +41,10 @@ pnpm-debug.log*
 .claude/
 .aider*
 
+# Agent skills — instalují se lokálně, nepublikují se do gitu
+.agents/
+skills-lock.json
+
 # Environment / config — never commit
 .env*
 !.env*.example
