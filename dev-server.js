@@ -1,8 +1,9 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+const { exec } = require('child_process');
 
-const PORT = Number(process.env.PORT) || 3000;
+const PORT = Number(process.env.PORT) || 3003;
 
 // Serve the build artifact, not the repo root, so local output matches production (ADR-0004).
 const ROOT = path.join(__dirname, 'dist');
@@ -83,5 +84,13 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(PORT, () => {
-  console.log(`\n  Local dist server running at http://localhost:${PORT}\n`);
+  const url = `http://localhost:${PORT}`;
+  console.log(`\n  Local dist server running at ${url}\n`);
+
+  const openCommand = { darwin: 'open', win32: 'start ""', linux: 'xdg-open' }[process.platform];
+  if (openCommand) {
+    exec(`${openCommand} ${url}`, (err) => {
+      if (err) console.warn(`  Nepodařilo se automaticky otevřít prohlížeč: ${err.message}`);
+    });
+  }
 });

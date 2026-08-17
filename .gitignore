@@ -68,3 +68,6 @@ Thumbs.db
 # GITHUB
 .github/copilot-instructions.md
 .github/dictation.md
+
+# Iniciální brief zůstává pouze lokálně.
+/docs/adr/0000-project-brief.md

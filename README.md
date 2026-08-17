@@ -19,7 +19,7 @@ Statický prezentační web s důrazem na 3D/WebGL a scroll-driven animace.
 ```bash
 npm install       # jednorázově
 npm run build     # Tailwind → dist/ → kontrola CSP
-npm run serve     # build + lokální server nad dist/ na http://localhost:3000
+npm run serve     # build + lokální server nad dist/ na http://localhost:3003
 npm run watch     # Tailwind v režimu sledování
 npm run deploy    # vercel --prod
 ```
